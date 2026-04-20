@@ -1,14 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hola, mundo</title>
+    <title>Football Dash | Base de Datos</title>
+    <meta name="description" content="Visualiza todos los datos de equipos y jugadores de la liga.">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <h1>Hola, mundo</h1>
-</body>
+    <div class="container">
+        <header>
+            <h1>Football Central</h1>
+            <p>Panel de Gestión y Visualización de la Base de Datos</p>
+        </header>
 
+        <section id="teams-section">
+            <h2 class="section-title">Equipos de la Liga</h2>
+            <div id="teams-grid" class="teams-grid">
+                <!-- Se inyectarán mediante JavaScript -->
+                <div class="card animate-fade">
+                    <p>Cargando equipos...</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="players-section">
+            <div class="controls">
+                <h2 class="section-title">Plantilla General</h2>
+                <div class="search-wrapper">
+                    <input type="text" id="playerSearch" placeholder="Buscar jugador, posición o equipo...">
+                </div>
+            </div>
+            
+            <div class="players-container animate-fade">
+                <table id="players-table">
+                    <thead>
+                        <tr>
+                            <th>Dorsal</th>
+                            <th>Nombre</th>
+                            <th>Apellidos</th>
+                            <th>Posición</th>
+                            <th>Equipo</th>
+                        </tr>
+                    </thead>
+                    <tbody id="players-body">
+                        <!-- Se inyectarán mediante JavaScript -->
+                        <tr>
+                            <td colspan="5" style="text-align: center;">Cargando jugadores...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
 </html>
