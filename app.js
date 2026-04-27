@@ -22,6 +22,8 @@ const DB = {
 const teamsGrid = document.getElementById('teams-grid');
 const playersBody = document.getElementById('players-body');
 const playerSearch = document.getElementById('playerSearch');
+const playerForm = document.getElementById('player-form');
+const teamSelect = document.getElementById('reg-team');
 
 // Helper to get team name by ID
 function getTeamName(teamId) {
@@ -82,8 +84,42 @@ playerSearch.addEventListener('input', (e) => {
     renderPlayers(e.target.value);
 });
 
+// Handle Form Submission
+playerForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const newPlayer = {
+        id: DB.jugadores.length + 1,
+        nombre: document.getElementById('reg-name').value,
+        apellidos: document.getElementById('reg-surname').value,
+        posicion: document.getElementById('reg-pos').value,
+        dorsal: parseInt(document.getElementById('reg-dorsal').value),
+        equipo_id: parseInt(document.getElementById('reg-team').value)
+    };
+
+    // Add to mock DB
+    DB.jugadores.push(newPlayer);
+    
+    // Refresh Table
+    renderPlayers(playerSearch.value);
+    
+    // Reset Form
+    playerForm.reset();
+    
+    // Visual feedback (optional but nice)
+    console.log('Jugador inscrito con éxito:', newPlayer);
+    alert(`¡${newPlayer.nombre} ${newPlayer.apellidos} ha sido inscrito!`);
+});
+
+// Populate Team Dropdown
+function populateTeamSelect() {
+    teamSelect.innerHTML = '<option value="" disabled selected>Seleccionar equipo...</option>' + 
+        DB.equipos.map(team => `<option value="${team.id}">${team.nombre}</option>`).join('');
+}
+
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     renderTeams();
     renderPlayers();
+    populateTeamSelect();
 });

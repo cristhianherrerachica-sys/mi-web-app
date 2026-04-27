@@ -24,6 +24,45 @@
             </div>
         </section>
 
+        <section id="registration-section" class="registration-section">
+            <h2 class="section-title">Inscripción de Jugadores</h2>
+            <div class="registration-container animate-fade">
+                <form id="player-form" class="registration-form">
+                    <div class="form-group">
+                        <label for="reg-name">Nombre</label>
+                        <input type="text" id="reg-name" placeholder="Ej: Kylian" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-surname">Apellidos</label>
+                        <input type="text" id="reg-surname" placeholder="Ej: Mbappé" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-pos">Posición</label>
+                        <select id="reg-pos" required>
+                            <option value="" disabled selected>Seleccionar...</option>
+                            <option value="Portero">Portero</option>
+                            <option value="Defensa">Defensa</option>
+                            <option value="Centrocampista">Centrocampista</option>
+                            <option value="Delantero">Delantero</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-dorsal">Dorsal</label>
+                        <input type="number" id="reg-dorsal" placeholder="1-99" min="1" max="99" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-team">Equipo</label>
+                        <select id="reg-team" required>
+                            <option value="" disabled selected>Cargando equipos...</option>
+                        </select>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-submit">Inscribir Jugador</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
         <section id="players-section">
             <div class="controls">
                 <h2 class="section-title">Plantilla General</h2>
