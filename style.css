@@ -5,7 +5,7 @@
     --card-bg: hsla(230, 20%, 15%, 0.7);
     --accent-primary: hsl(260, 100%, 70%);
     --accent-secondary: hsl(190, 100%, 50%);
-    --text-main: hsl(0, 0%, 95%);
+    --text-main: hsl(204, 100%, 50%);
     --text-muted: hsl(120, 10%, 60%);
     --glass-border: hsla(0, 0%, 100%, 0.1);
     --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
@@ -265,7 +265,7 @@ tr:last-child td {
     letter-spacing: 0.5px;
 }
 
-.form-group input, 
+.form-group input,
 .form-group select {
     padding: 12px 15px;
     border-radius: 12px;
@@ -276,7 +276,7 @@ tr:last-child td {
     transition: var(--transition-smooth);
 }
 
-.form-group input:focus, 
+.form-group input:focus,
 .form-group select:focus {
     outline: none;
     border-color: var(--accent-primary);
