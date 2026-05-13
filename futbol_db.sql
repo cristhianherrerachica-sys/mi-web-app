@@ -45,3 +45,16 @@ INSERT INTO jugadores (nombre, apellidos, posicion, dorsal, equipo_id) VALUES
 ('Isco', 'Alarcón', 'Centrocampista', 22, 4),
 ('Héctor', 'Bellerín', 'Defensa', 2, 4),
 ('Pablo', 'Fornals', 'Centrocampista', 18, 4);
+
+-- Crear tabla de usuarios
+CREATE TABLE IF NOT EXISTS usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password_hash VARCHAR(255) NOT NULL,
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Insertar usuario administrador por defecto
+-- El hash corresponde a la contraseña "admin123"
+INSERT INTO usuarios (username, password_hash) VALUES
+('admin', '$2y$10$y5KzBwW.wG1D/M5tC4nUo.l3N6P2oF3z1xQhN9eK1tY3E8.4A2VHe');

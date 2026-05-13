@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
+
 require_once 'db_config.php';
 
 // Handle Form Submission
@@ -39,9 +45,13 @@ $players = $stmtPlayers->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
     <div class="container">
-        <header>
+        <header style="position: relative;">
             <h1>Football Central</h1>
             <p>Panel de Gestión y Visualización de la Base de Datos (PHP Version)</p>
+            <div style="position: absolute; top: 0; right: 0;">
+                <span style="font-size: 0.85rem; color: var(--text-muted); margin-right: 15px;">Hola, <?php echo htmlspecialchars($_SESSION['username']); ?></span>
+                <a href="logout.php" style="color: white; text-decoration: none; font-size: 0.85rem; background: rgba(255,107,107,0.2); border: 1px solid rgba(255,107,107,0.5); padding: 6px 12px; border-radius: 8px; transition: var(--transition-smooth);">Cerrar Sesión</a>
+            </div>
         </header>
 
         <?php if ($message): ?>
