@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
 
 :root {
-    --bg-color: hsl(230, 20%, 8%);
-    --card-bg: hsla(230, 20%, 15%, 0.7);
-    --accent-primary: hsl(260, 100%, 70%);
-    --accent-secondary: hsl(190, 100%, 50%);
-    --text-main: hsl(204, 100%, 50%);
-    --text-muted: hsl(120, 10%, 60%);
-    --glass-border: hsla(0, 0%, 100%, 0.1);
-    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    --bg-color: #0d2514; /* Verde muy oscuro para la base (nocturno) */
+    --card-bg: hsla(140, 30%, 15%, 0.75); /* Cristal entintado de verde */
+    --accent-primary: #4ade80; /* Verde césped intenso brillante */
+    --accent-secondary: #fef08a; /* Amarillo brillante (reflejos estadio) */
+    --text-main: #ffffff; /* Blanco para máxima legibilidad */
+    --text-muted: #cbd5e1; /* Gris azulado claro para texto secundario */
+    --glass-border: hsla(140, 50%, 80%, 0.2);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
 
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -25,8 +25,21 @@ body {
     color: var(--text-main);
     line-height: 1.6;
     overflow-x: hidden;
-    background: radial-gradient(circle at top right, hsla(260, 100%, 20%, 0.15), transparent),
-        radial-gradient(circle at bottom left, hsla(190, 100%, 20%, 0.15), transparent);
+    /* Efecto premium de Campo de Fútbol (Césped y Focos) */
+    background-image: 
+        /* 1. Textura sutil para dar la sensación orgánica del césped */
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E"),
+        /* 2. Viñeta oscura profunda desde los bordes para un look nocturno cinemático */
+        radial-gradient(ellipse at center, transparent 0%, rgba(5, 20, 11, 0.95) 100%),
+        /* 3. Franjas tradicionales del corte de césped (clara/oscura) */
+        repeating-linear-gradient(
+            0deg,
+            hsla(140, 50%, 40%, 0.06) 0,
+            hsla(140, 50%, 40%, 0.06) 80px,
+            transparent 80px,
+            transparent 160px
+        );
+    background-attachment: fixed;
     min-height: 100vh;
 }
 
@@ -48,6 +61,7 @@ header h1 {
     font-weight: 700;
     background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 0.5rem;
 }
