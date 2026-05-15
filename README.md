@@ -1,55 +1,45 @@
-��# Football Central
+��# ⚽ Football Central | Gestión de Equipos y Jugadores
 
-Football Central es una aplicación web dinámica diseñada para la gestión y visualización de una base de datos de fútbol. Permite a los usuarios consultar los equipos que conforman la liga y visualizar la plantilla general de jugadores, así como inscribir nuevos jugadores a equipos existentes. Incluye un sistema de autenticación básico para proteger el acceso a la plataforma.
+Football Central es una aplicación web dinámica diseñada para visualizar y gestionar información sobre los equipos y jugadores de La Liga EA Sports. Permite a los administradores registrarse, iniciar sesión y gestionar la base de datos de la liga de forma intuitiva.
 
-## Enlace del proyecto
+## 🚀 Funcionalidades
 
-Puedes ver el proyecto desplegado en vivo en el siguiente enlace:
-**[Enlace a la web en dwes.site](https://tu-usuario.dwes.site/)** *(Sustituye "tu-usuario" por la URL real proporcionada por tu servidor)*.
+- **Autenticación Completa**: Sistema de login y registro unificado con cifrado de contraseñas (bcrypt).
+- **Visualización de Equipos**: Listado de todos los equipos de primera división con detalles como ciudad, estadio y año de fundación.
+- **Gestión de Jugadores**: Formulario para inscribir nuevos jugadores asociados a sus respectivos equipos.
+- **Buscador Inteligente**: Filtrado en tiempo real de jugadores por nombre, posición o equipo.
+- **Diseño Premium**: Interfaz moderna, responsive y con estética "Dark Mode" inspirada en el fútbol profesional.
 
-## Tecnologías Empleadas
+## 🛠️ Tecnologías Utilizadas
 
-El proyecto está desarrollado utilizando una arquitectura clásica de servidor e interfaces web modernas, con las siguientes tecnologías:
+- **Backend**: [PHP 8.x](https://www.php.net/) con **PDO** para una conexión segura a la base de datos.
+- **Base de Datos**: [MySQL](https://www.mysql.com// MariaDB.
+- **Frontend**: 
+    - **HTML5** Semántico.
+    - **CSS3** (Variables, Grid, Flexbox y animaciones personalizadas).
+    - **JavaScript** (Vanilla script para filtrado dinámico y efectos visuales).
+- **Servidor Recomendado**: XAMPP / Apache.
 
-- **Frontend:**
-  - **HTML5:** Para la estructura semántica de las páginas.
-  - **CSS3 (Vanilla):** Sistema de estilos personalizado, con temática oscura, efectos *glassmorphism* (cristal esmeriladoy flexbox/grid para la responsividad.
-  - **JavaScript (ES6):** Para las interacciones de cliente (si aplican, como filtrado o notificaciones en el navegador).
-- **Backend:**
-  - **PHP (PDO):** Lógica del lado del servidor para conectarse a la base de datos, proteger rutas mediante control de sesiones (`$_SESSION`y procesar formularios de forma segura.
-- **Base de Datos:**
-  - **MySQL / MariaDB:** Almacenamiento persistente de datos (equipos, jugadores y usuarios del sistema).
+## 📥 Instalación
 
-## Instrucciones de Instalación y Despliegue Local
+Sigue estos pasos para poner la aplicación en marcha en tu entorno local:
 
-Sigue estos pasos para instalar y ejecutar el proyecto en tu entorno local:
+1. **Clonar el proyecto**:
+   Copia todos los archivos dentro de tu carpeta `htdocs` (si usas XAMPP).
 
-### 1. Requisitos previos
-- Necesitas un servidor local que pueda ejecutar PHP y MySQL. Se recomienda **XAMPP**, **WAMP**, **MAMP** o **Laragon**.
+2. **Configurar la Base de Datos**:
+   - Crea una base de datos llamada `app_futbol`.
+   - Modifica el archivo `db_config.php` con tus credenciales de MySQL (host, usuario, contraseña).
+   - Importa el archivo `futbol_db.sql` en PHPMyAdmin para cargar los datos iniciales de los equipos.
 
-### 2. Copiar archivos al servidor
-- Extrae o copia la carpeta `mi-web-app` (que contiene los archivos `index.php`, `login.php`, etc.) dentro de la ruta pública de tu servidor:
-  - Si usas XAMPP (Windows): `C:\xampp\htdocs\mi-web-app`
-  - Si usas WAMP: `C:\wamp64\www\mi-web-app`
+3. **Acceso al Panel**:
+   - Abre tu navegador y dirígete a `http://localhost/login.php`.
+   - Si no tienes cuenta, usa la pestaña de **Registro** para crear una. El sistema creará automáticamente la tabla de usuarios si no existe.
 
-### 3. Configuración de la Base de Datos
-1. Abre tu gestor de base de datos MySQL (por ejemplo, **phpMyAdmin**, accesible generalmente desde `http://localhost/phpmyadmin`).
-2. Ve a la pestaña **Importar** (Import).
-3. Selecciona el archivo `futbol_db.sql` que se encuentra en la raíz del proyecto.
-4. Haz clic en **Continuar** (Go) para importar la base de datos completa. Esto creará la base de datos `app_futbol`, junto con sus tablas de `equipos`, `jugadores`, `usuarios` y los respectivos datos de prueba.
+## 🌐 Despliegue
 
-### 4. Configurar conexión en PHP
-- Abre el archivo `db_config.php` y revisa las credenciales de conexión:
-  ```php
-  $host = 'localhost';
-  $dbname = 'app_futbol';
-  $username = 'root'; // Usuario por defecto en entornos locales
-  $password = '';     // Generalmente vacío en XAMPP. Añade contraseña si la tienes configurada.
-  ```
+Puedes ver la versión en línea de este proyecto aquí:
+🔗 **[Football Central en dwes.site](http://dwes.site)**
 
-### 5. Iniciar la aplicación
-- Accede desde tu navegador web a la ruta de tu aplicación (por ejemplo: `http://localhost/mi-web-app/`).
-- El sistema te redirigirá a la página de **Inicio de Sesión**.
-- Usa las siguientes credenciales predeterminadas para entrar al sistema (creadas al importar el SQL):
-  - **Usuario:** `admin`
-  - **Contraseña:** `admin123`
+---
+*Desarrollado como proyecto de gestión de bases de datos y desarrollo web.*

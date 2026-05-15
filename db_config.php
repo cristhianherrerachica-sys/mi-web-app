@@ -3,7 +3,7 @@
 $host = 'localhost';
 $dbname = 'app_futbol';
 $username = 'root';
-$password = ''; // Cambiar si tienes contraseña en tu MySQL
+$password = 'Cristhian06'; // Cambiar si tienes contraseña en tu MySQL
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);

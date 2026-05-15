@@ -1,0 +1,4 @@
+db_config.php
+setup_db.php
+*.log
+.DS_Store
