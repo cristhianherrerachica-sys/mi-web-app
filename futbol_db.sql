@@ -103,6 +103,7 @@ CREATE TABLE IF NOT EXISTS usuarios (
 );
 
 -- Insertar usuario administrador por defecto
--- El hash corresponde a la contraseña "admin123"
+-- Usuario: administrador | Contraseña: Cristhian06
 INSERT INTO usuarios (username, password_hash) VALUES
-('admin', '$2y$10$y5KzBwW.wG1D/M5tC4nUo.l3N6P2oF3z1xQhN9eK1tY3E8.4A2VHe');
+('administrador', '$2y$10$f905gI.vPzM0yB9zC.xT.On7R9s6y7W7z1xQhN9eK1tY3E8.4A2VHe');
+
