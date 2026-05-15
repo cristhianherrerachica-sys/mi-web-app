@@ -1,4 +1,4 @@
-��# ⚽ Football Central | Gestión de Equipos y Jugadores
+# ⚽ Football Central | Gestión de Equipos y Jugadores
 
 Football Central es una aplicación web dinámica diseñada para visualizar y gestionar información sobre los equipos y jugadores de La Liga EA Sports. Permite a los administradores registrarse, iniciar sesión y gestionar la base de datos de la liga de forma intuitiva.
 
@@ -13,7 +13,7 @@ Football Central es una aplicación web dinámica diseñada para visualizar y ge
 ## 🛠️ Tecnologías Utilizadas
 
 - **Backend**: [PHP 8.x](https://www.php.net/) con **PDO** para una conexión segura a la base de datos.
-- **Base de Datos**: [MySQL](https://www.mysql.com// MariaDB.
+- **Base de Datos**: [MySQL](https://www.mysql.com/) / MariaDB.
 - **Frontend**: 
     - **HTML5** Semántico.
     - **CSS3** (Variables, Grid, Flexbox y animaciones personalizadas).
