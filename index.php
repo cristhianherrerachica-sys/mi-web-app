@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: text/html; charset=utf-8');
 session_start();
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
@@ -41,7 +42,7 @@ $players = $stmtPlayers->fetchAll(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Football Dash | Central PHP</title>
     <meta name="description" content="Visualiza todos los datos de equipos y jugadores de la liga.">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=1.1">
 </head>
 <body>
     <div class="container">
