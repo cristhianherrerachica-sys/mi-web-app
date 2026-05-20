@@ -6,9 +6,7 @@ Football Central es una aplicación web dinámica diseñada para visualizar y ge
 
 Aquí puedes insertar tu propio vídeo para mostrar el funcionamiento de la aplicación:
 
-<div style="text-align: center;">
-  <iframe src="https://drive.google.com/file/d/1M4mNdzleptKm2nDzP12YRT9ZUM83rFec/preview" width="100%" height="450" allow="autoplay" style="border-radius: 10px; border: 2px solid #333;"></iframe>
-</div>
+[Ver vídeo de demostración](https://drive.google.com/file/d/1M4mNdzleptKm2nDzP12YRT9ZUM83rFec/view?usp=drive_link)
 
 ## 🚀 Funcionalidades
 
