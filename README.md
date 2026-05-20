@@ -46,7 +46,7 @@ Sigue estos pasos para poner la aplicación en marcha en tu entorno local:
 ## 🌐 Despliegue
 
 Puedes ver la versión en línea de este proyecto aquí:
-🔗 **[Football Central en dwes.site](http://dwes.site)**
+🔗 **[Football Central en dwes.site](http://alumno2.dwes.site)**
 
 ---
 *Desarrollado como proyecto de gestión de bases de datos y desarrollo web.*
