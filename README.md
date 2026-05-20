@@ -2,7 +2,18 @@
 
 Football Central es una aplicación web dinámica diseñada para visualizar y gestionar información sobre los equipos y jugadores de La Liga EA Sports. Permite a los administradores registrarse, iniciar sesión y gestionar la base de datos de la liga de forma intuitiva.
 
+## 🎥 Vídeo de Demostración
+
+Aquí puedes insertar tu propio vídeo para mostrar el funcionamiento de la aplicación:
+
+<div align="center">
+  <video src="https://drive.google.com/file/d/1M4mNdzleptKm2nDzP12YRT9ZUM83rFec/view?usp=drive_link" width="100%" controls>
+    Tu navegador no soporta la reproducción de vídeos.
+  </video>
+</div>
+
 ## 🚀 Funcionalidades
+
 
 - **Autenticación Completa**: Sistema de login y registro unificado con cifrado de contraseñas (bcrypt).
 - **Visualización de Equipos**: Listado de todos los equipos de primera división con detalles como ciudad, estadio y año de fundación.
