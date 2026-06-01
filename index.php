@@ -26,6 +26,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['action']) && $_POST['a
     }
 }
 
+// Handle Deletion
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['action']) && $_POST['action'] == 'delete_player') {
+    $player_id = (int)$_POST['player_id'];
+
+    try {
+        $stmt = $pdo->prepare("DELETE FROM jugadores WHERE id = ?");
+        $stmt->execute([$player_id]);
+        $message = "Jugador eliminado correctamente.";
+    } catch (PDOException $e) {
+        $message = "Error al eliminar: " . $e->getMessage();
+    }
+}
+
 // Fetch Teams
 $stmtTeams = $pdo->query("SELECT * FROM equipos ORDER BY nombre");
 $teams = $stmtTeams->fetchAll(PDO::FETCH_ASSOC);
@@ -122,8 +135,9 @@ $players = $stmtPlayers->fetchAll(PDO::FETCH_ASSOC);
         </section>
 
         <section id="players-section">
+            <h2 class="section-title">Gestión de Jugadores</h2>
             <div class="controls">
-                <h2 class="section-title">Plantilla General</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1rem;">Desde aquí puedes buscar y dar de baja a los jugadores inscritos en el sistema.</p>
                 <div class="search-wrapper">
                     <input type="text" id="playerSearch" placeholder="Buscar jugador, posición o equipo...">
                 </div>
@@ -138,6 +152,7 @@ $players = $stmtPlayers->fetchAll(PDO::FETCH_ASSOC);
                             <th>Apellidos</th>
                             <th>Posición</th>
                             <th>Equipo</th>
+                            <th style="text-align: center;">Acciones</th>
                         </tr>
                     </thead>
                     <tbody id="players-body">
@@ -158,6 +173,15 @@ $players = $stmtPlayers->fetchAll(PDO::FETCH_ASSOC);
                                     <span class="pos-tag <?php echo $class; ?>"><?php echo $short; ?></span> <?php echo htmlspecialchars($pos); ?>
                                 </td>
                                 <td><?php echo htmlspecialchars($player['equipo_nombre'] ?: 'Sin equipo'); ?></td>
+                                <td style="text-align: center;">
+                                    <form method="POST" action="index.php" onsubmit="return confirm('¿Estás seguro de que deseas eliminar a este jugador?');" style="display: inline;">
+                                        <input type="hidden" name="action" value="delete_player">
+                                        <input type="hidden" name="player_id" value="<?php echo $player['id']; ?>">
+                                        <button type="submit" class="btn-delete">
+                                            🗑️ Eliminar
+                                        </button>
+                                    </form>
+                                </td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
